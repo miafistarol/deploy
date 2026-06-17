@@ -2,12 +2,12 @@ import 'dotenv/config'
 import express, { request } from "express"
 import { Pool } from "pg"
 
-const pool =({
+const pool =new Pool({
     host: process.env.BD_HOST,
     user: process.env.BD_USER,
     database: process.env.BD_NAME,
     port: process.env.BD_PORT,
-    pass: process.env.BD_PASS
+    password: process.env.BD_PASS
 
 })
 
@@ -18,4 +18,6 @@ app.get('/test' , async (req, res)=> {
     res.send('Test okey')
 })
 
-app.listen()
+app.listen(PUERTO, () => {
+    console.log(`Servidor escuchando en el puerto ${PUERTO}`)
+})

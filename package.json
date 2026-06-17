@@ -2,9 +2,10 @@
   "name": "deploy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "dev": "node --watch index.mjs"
+    "dev": "node --watch index.mjs",
+    "start": "node index.mjs"
   },
   "keywords": [],
   "author": "",
