@@ -7,14 +7,17 @@ const pool =new Pool({
     user: process.env.BD_USER,
     database: process.env.BD_NAME,
     port: process.env.BD_PORT,
-    password: process.env.BD_PASS
+    password: process.env.BD_PASS,
+    ssl: {
+        rejectUnauthorized: false
+    }
 
 })
 
 const PUERTO = process.env.PORT || 3000
 const app = express()
-app.get('/test' ,  (req, res)=> {
-    // await pool.query('SELECT * from mensajes')
+app.get('/test' , async  (req, res)=> {
+    await pool.query('SELECT * from mensajes')
     res.send('Test okey')
 })
 
