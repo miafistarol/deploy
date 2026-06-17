@@ -13,8 +13,8 @@ const pool =new Pool({
 
 const PUERTO = process.env.PORT || 3000
 const app = express()
-app.get('/test' , async (req, res)=> {
-    await pool.query('SELECT * from mensajes')
+app.get('/test' ,  (req, res)=> {
+    // await pool.query('SELECT * from mensajes')
     res.send('Test okey')
 })
 
